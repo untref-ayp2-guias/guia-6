@@ -42,7 +42,7 @@ func (s *Set[T]) Size() int {
 
 // String devuelve una representación en cadena del conjunto
 // O(n)
-func (s *Set[T]) String() string {
+func (s Set[T]) String() string {
 	cadena := "Conjunto: {"
 	elementos := s.elementos.String()
 	inicio := strings.Index(elementos, "[") + 1

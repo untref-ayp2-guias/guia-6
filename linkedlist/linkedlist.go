@@ -164,7 +164,7 @@ func (l *LinkedList[T]) IsEmpty() bool {
 // en el formato [1 2 3].
 // Se puede usar para imprimir la lista con fmt.Println
 // O(n)
-func (l *LinkedList[T]) String() string {
+func (l LinkedList[T]) String() string {
 	if l.head == nil {
 		return "[]"
 	}

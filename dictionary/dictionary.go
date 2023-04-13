@@ -1,5 +1,9 @@
 package dictionary
 
+import (
+	"fmt"
+)
+
 // Diccionario es un conjunto de entradas formadas por pares únicos (clave: valor)
 type Dictionary[K comparable, V any] struct {
 	mapa map[K]V
@@ -38,8 +42,8 @@ func (dict *Dictionary[K, V]) Contains(key K) bool {
 	return exists
 }
 
-// Devuelve el valor para esa clave 
-//O(1)
+// Devuelve el valor para esa clave
+// O(1)
 func (dict *Dictionary[K, V]) Get(key K) V {
 	return dict.mapa[key]
 }
@@ -74,3 +78,15 @@ func (dict *Dictionary[K, V]) GetValues() []V {
 	return dictValues
 }
 
+// Devuelve una representación en cadena del diccionario
+// O(n)
+func (dict Dictionary[K, V]) String() string {
+	var str string
+	str = "Dictionary {\n"
+	var key K
+	for key = range dict.mapa {
+		str += fmt.Sprintf("\t%v: %v\n", key, dict.mapa[key])
+	}
+	str += "}"
+	return str
+}
