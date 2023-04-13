@@ -6,6 +6,9 @@ import (
 )
 func TestFrecuencia(t *testing.T) {
 	d := ejercicios.Frecuencia("ahora")
+	if d.Size() != 4 {
+		t.Errorf("Tamaño %d, debería ser %d", d.Size(), 4)
+	}
 	if d.Get("a") != 2{
 		t.Errorf("La cantidad que aparece la a deberia ser %d, pero es %d", 2, d.Get("a"))
 	}

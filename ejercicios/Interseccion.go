@@ -5,6 +5,6 @@ import (
 	// agregar import faltante
 )
 
-func Interseccion(l1 linkedlist.LinkedList[string], l2 linkedlist.LinkedList[string]) linkedlist.LinkedList[string]{
+func Interseccion(s1 []string, s2 []string) linkedlist.LinkedList[string]{
 	panic("Not implemented")
 }

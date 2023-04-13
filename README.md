@@ -26,13 +26,12 @@ func Traducir(texto string, dic dictionary.Dictionary[string, string]) string
 ```
 > Para parsear el string pueden usar: func Split(str, sep string) []string
 
-3. Escriba una función que toma 2 listas y devuelve una nueva lista que es el resultado de la interseccion de las 2 listas anteriores, la complejidad del metodo debe ser O(n)
+3. Escriba una función que toma 2 slices y devuelve una nueva lista que es el resultado de la interseccion de los 2 slices anteriores, la complejidad del metodo debe ser O(n)
 
 ```go
-func Interseccion(l1 linkedlist.LinkedList[string], l2 linkedlist.LinkedList[string]) linkedlist.LinkedList[string]
+func Interseccion(s1 []string, s2 []string) linkedlist.LinkedList[string]
 ```
 
-> Para parsear el string pueden usar: func Split(str, sep string) []string
 4. Tenemos que ayudar a los docentes a preparar la información solicitada por el
 Departamento de Alumnos.
 Cuando toman asistencia anotan los presentes por

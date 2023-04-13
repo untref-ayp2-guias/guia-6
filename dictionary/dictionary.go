@@ -31,7 +31,7 @@ func (dict *Dictionary[K, V]) Remove(key K) bool {
 }
 
 // Verifica si existe una entrada para ese valor de clave
-// O(n)
+// O(1)
 func (dict *Dictionary[K, V]) Contains(key K) bool {
 	var exists bool
 	_, exists = dict.mapa[key]
