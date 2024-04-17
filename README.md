@@ -15,7 +15,7 @@ Escriba una función que reciba una cadena de caracteres y calcule la frecuencia
 
 	Por ejemplo:
 	Frecuencia("hola como estas...") debe devolver 
-	{a: 2. c: 1, e: 1, h: 1, l: 1, m: 1, o: 3, s: 2, t: 1,}
+	{a: 2, c: 1, e: 1, h: 1, l: 1, m: 1, o: 3, s: 2, t: 1}
 
 > Recuerden que al recorrer una cadena deben castear cada valor a string ya que GO representa los caracteres como enteros. No se deben incluir los blancos en el conjunto. Por lo tanto se recomienda usar `github.com/agrison/go-commons-lang/stringUtils` para chequear si un caracter es un blanco (espacio, tabulador, salto de línea, etc.)
 
