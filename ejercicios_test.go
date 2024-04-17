@@ -9,6 +9,21 @@ import (
 	dict "github.com/untref-ayp2/data-structures/dictionary"
 )
 
+func TestTraducir(t *testing.T) {
+	dic := dictionary.NewDictionary[string, string]()
+	dic.Put("Dungeons", "Calabozos")
+	dic.Put("Dragons", "Dragones")
+
+	salida := Traducir("Dungeons", *dic)
+	assert.Equal(t, "Calabozos", salida)
+
+	salida = Traducir("Dwarf", *dic)
+	assert.Equal(t, "error", salida)
+
+	salida = Traducir("Dungeons & Dragons", *dic)
+	assert.Equal(t, "Calabozos error Dragones", salida)
+}
+
 func TestFrecuencia(t *testing.T) {
 	dict := Frecuencia("ahora")
 	require.NotNil(t, dict)
@@ -26,21 +41,9 @@ func TestFrecuencia(t *testing.T) {
 	assert.Equal(t, 2, dict.Get("e"))
 	assert.Equal(t, 2, dict.Get("s"))
 	assert.Equal(t, 1, dict.Get("l"))
-	assert.Equal(t, 2, dict.Get("u"))
+	assert.Equal(t, 1, dict.Get("u"))
 	assert.Equal(t, 1, dict.Get("n"))
 
-}
-
-func TestInformacionSolicitada(t *testing.T) {
-	entrada := dict.NewDictionary[string, []string]()
-	sl1 := []string{"Ana", "Pedro"}
-	sl2 := []string{"Ana"}
-	entrada.Put("Mie 10", sl1)
-	entrada.Put("Vie 12", sl2)
-	salida := InformacionSolicitada(*entrada)
-	require.NotNil(t, salida)
-	assert.ElementsMatch(t, []string{"Mie 10"}, salida.Get("Pedro"))
-	assert.ElementsMatch(t, []string{"Mie 10", "Vie 12"}, salida.Get("Ana"))
 }
 
 func TestInterseccion(t *testing.T) {
@@ -66,18 +69,14 @@ func TestInterseccion(t *testing.T) {
 	list = Interseccion(s1, s2)
 	assert.Equal(t, 0, list.Size())
 }
-
-func TestTraducir(t *testing.T) {
-	dic := dictionary.NewDictionary[string, string]()
-	dic.Put("Dungeons", "Calabozos")
-	dic.Put("Dragons", "Dragones")
-
-	salida := Traducir("Dungeons", *dic)
-	assert.Equal(t, "Calabozo", salida)
-
-	salida = Traducir("Dwarf", *dic)
-	assert.Equal(t, "error", salida)
-
-	salida = Traducir("Dungeons & Dragons", *dic)
-	assert.Equal(t, "Calabozo error Dragones", salida)
+func TestInformacionSolicitada(t *testing.T) {
+	entrada := dict.NewDictionary[string, []string]()
+	sl1 := []string{"Ana", "Pedro"}
+	sl2 := []string{"Ana"}
+	entrada.Put("Mie 10", sl1)
+	entrada.Put("Vie 12", sl2)
+	salida := InformacionSolicitada(*entrada)
+	require.NotNil(t, salida)
+	assert.ElementsMatch(t, []string{"Mie 10"}, salida.Get("Pedro"))
+	assert.ElementsMatch(t, []string{"Mie 10", "Vie 12"}, salida.Get("Ana"))
 }
