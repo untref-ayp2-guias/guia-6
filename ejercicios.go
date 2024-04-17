@@ -5,7 +5,6 @@ import (
 
 	//"github.com/agrison/go-commons-lang/stringUtils"
 	"github.com/untref-ayp2/data-structures/dictionary"
-	dict "github.com/untref-ayp2/data-structures/dictionary"
 	"github.com/untref-ayp2/data-structures/list"
 )
 
@@ -14,7 +13,7 @@ func Traducir(texto string, dict dictionary.Dictionary[string, string]) string {
 	return ""
 }
 
-func Frecuencia(texto string) *dict.Dictionary[string, int] {
+func Frecuencia(texto string) *dictionary.Dictionary[string, int] {
 	//Implementar
 	return nil
 }
@@ -24,7 +23,7 @@ func Interseccion(s1 []string, s2 []string) *list.LinkedList[string] {
 	return nil
 }
 
-func InformacionSolicitada(entrada dict.Dictionary[string, []string]) *dict.Dictionary[string, []string] {
+func InformacionSolicitada(entrada dictionary.Dictionary[string, []string]) *dictionary.Dictionary[string, []string] {
 	//Implementar
 	return nil
 }
