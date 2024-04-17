@@ -6,7 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/untref-ayp2/data-structures/dictionary"
-	dict "github.com/untref-ayp2/data-structures/dictionary"
 )
 
 func TestTraducir(t *testing.T) {
@@ -70,7 +69,7 @@ func TestInterseccion(t *testing.T) {
 	assert.Equal(t, 0, list.Size())
 }
 func TestInformacionSolicitada(t *testing.T) {
-	entrada := dict.NewDictionary[string, []string]()
+	entrada := dictionary.NewDictionary[string, []string]()
 	sl1 := []string{"Ana", "Pedro"}
 	sl2 := []string{"Ana"}
 	entrada.Put("Mie 10", sl1)
