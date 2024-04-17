@@ -3,7 +3,7 @@
 
 ### Ejercicio 1
 
-Escriba una función que reciba un texto en castellano y un diccionario, y devuelva la oración traducida palabra por palabra según el diccionario. Si una palabra no se encuentra en el diccionario, deberá sustituirla por <error> en la cadena resultante.
+Escriba una función que reciba un texto en castellano y un diccionario, y devuelva la oración traducida palabra por palabra según el diccionario. Si una palabra no se encuentra en el diccionario, deberá sustituirla por "error" en la cadena resultante.
 
 > Para parsear el string pueden usar: func Split(str, sep string) []string
 
